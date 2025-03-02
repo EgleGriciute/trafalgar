@@ -1,0 +1,944 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "muli", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.defaultParagraph {
+  color: #7d7987;
+  margin: 1em 0;
+  line-height: 1.8em;
+  font-size: 1.2em;
+}
+
+.defaultBtn,
+.reverseBtn {
+  margin-top: 1.2em;
+  width: 12em;
+  height: 3.5em;
+  border-radius: 3.45em;
+  font-size: 1.1em;
+  line-height: 3.75em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.defaultBtn {
+  color: #458ff6;
+  background-color: #fff;
+  border: 1.4px solid #458ff6;
+}
+
+.reverseBtn {
+  color: #fff;
+  background-color: #458ff6;
+  border: 1.4px solid #fff;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1em;
+  padding-top: 1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img[alt=rectangle] {
+  margin: 2em 0;
+}
+
+img[alt] {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+section.services,
+section.healthcareProviders,
+section.mobileApps,
+section.testimonials {
+  margin: 2.4em;
+}
+
+.animateOnScroll {
+  animation-duration: 1s;
+  animation-name: scrollbar;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes scrollbar {
+  0% {
+    transform: scaleX(0.06);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes animateButton {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes nextSlide {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes prevSlide {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+.navBar {
+  margin-bottom: 1em;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.navBar .navBarLogo {
+  justify-content: space-evenly;
+  box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.4);
+  padding: 1em;
+}
+.navBar .navBarLogo svg {
+  width: 2.5em;
+  cursor: pointer;
+}
+.navBar .hamburgerMenuHidden {
+  display: none;
+}
+.navBar .navBarItemsWrapper {
+  flex-direction: column;
+  gap: 0.5em;
+}
+.navBar .navBarItems {
+  margin: 2em;
+}
+.navBar .navBarItemsWrapper__item a {
+  color: #1f1534;
+  opacity: 50%;
+  font-size: 1.3em;
+}
+.navBar .navBarItemsWrapper__item a:hover {
+  animation-duration: 2s;
+  animation-name: animateButton;
+}
+.navBar .navBarItemsWrapper__item {
+  padding: 0.5em 0;
+}
+.navBar .navBarItemsWrapper__item:first-child a {
+  font-weight: 700;
+  opacity: 100%;
+}
+.navBar .navBarItemsWrapper__item:not(:first-child) a {
+  font-weight: 400;
+}
+
+.hero {
+  margin: 7em 1.5em;
+}
+.hero .bubbleAccent {
+  display: none;
+}
+.hero .heroContainer {
+  flex-direction: column-reverse;
+}
+.hero .heroLeft h1 {
+  margin: 1em 0;
+  text-align: center;
+}
+.hero .heroLeft p {
+  font-size: 120%;
+  text-align: center;
+}
+.hero .heroRight img {
+  width: 85vw;
+}
+.hero .heroLeft div {
+  text-align: center;
+}
+
+section.services .servicesBody {
+  position: relative;
+}
+section.services .servicesHeader {
+  flex-direction: column;
+}
+section.services .servicesHeader * {
+  padding: 0.5em 0;
+}
+section.services .servicesBody {
+  margin-top: 2em;
+  width: 100%;
+  gap: 3em;
+  flex-wrap: wrap;
+  position: relative;
+}
+section.services .servicesBody img[alt=bgElement] {
+  position: absolute;
+  z-index: -1;
+  top: -6%;
+  width: 100vw;
+}
+section.services .servicesBody img[alt=bubbleElement] {
+  position: absolute;
+  top: 15%;
+  left: 80%;
+  z-index: -1;
+}
+section.services .servicesBodyCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  padding: 2em 3em 1em 3em;
+  margin: 2em 5%;
+  border-radius: 1.2em;
+  background-color: #fff;
+  box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.4);
+}
+section.services .servicesBodyCard img {
+  margin: 0.5em 0;
+}
+section.services .servicesBodyCard p {
+  width: 90%;
+  text-align: center;
+}
+section.services .servicesBodyCard h3 {
+  margin: 0.5em 0;
+}
+
+section.healthcareProviders {
+  margin-top: 5em;
+  flex-direction: column;
+  position: relative;
+}
+section.healthcareProviders .healthcareProviders__left {
+  margin: 3em 0;
+}
+section.healthcareProviders .healthcareProviders__left img {
+  width: 80vw;
+}
+section.healthcareProviders img[alt=bubbleElement] {
+  position: absolute;
+  z-index: -1;
+  top: 22%;
+  left: 75%;
+}
+section.healthcareProviders .healthcareProviders__right div {
+  text-align: center;
+}
+
+section.mobileApps {
+  margin-top: 7em;
+  flex-direction: column-reverse;
+}
+section.mobileApps img[alt=appsBanner] {
+  width: 85vw;
+}
+section.mobileApps .mobileApps__left div {
+  text-align: center;
+}
+section.mobileApps .mobileApps__left button img {
+  padding-left: 0.5em;
+}
+
+section.testimonials .testimonialsWrapper {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+section.testimonials .testimonialsWrapper img[alt=bubbleElementUpper] {
+  position: absolute;
+  top: 7%;
+  left: 85%;
+  z-index: 1;
+}
+section.testimonials .testimonialsWrapper img[alt=bubbleElementDown] {
+  position: absolute;
+  bottom: -3%;
+  left: -7%;
+  z-index: -1;
+}
+section.testimonials .testimonialsWrapper .testimonialsContent {
+  margin: 20% 0 2em 0;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  flex-direction: column;
+  padding: 2em;
+  background: linear-gradient(208.18deg, #67c3f3 9.05%, #5a98f2 76.74%);
+  color: #fff;
+  border-radius: 1.5em;
+}
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsHeader {
+  flex-direction: column;
+  text-align: center;
+  font-size: large;
+}
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody {
+  flex-direction: column;
+}
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody:not(.defaultSlide) {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  visibility: hidden;
+}
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody img[alt=testimonialsHeadshot01],
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody img[alt=testimonialsHeadshot02],
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody img[alt=testimonialsHeadshot03],
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody img[alt=testimonialsHeadshot04] {
+  width: 8.8em;
+  height: 8.8em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody .testimonialsBody__left {
+  padding: 0 3em;
+  width: 400px;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 1em;
+}
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody .testimonialsBody__left img {
+  border-radius: 50%;
+  border: 0.3em solid #fff;
+  margin-right: 0.8em;
+}
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody .testimonialsBody__left .testimonialsProp {
+  flex-direction: column;
+}
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody .testimonialsBody__left .testimonialsProp * {
+  padding: 0.3em;
+  text-align: center;
+}
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody .testimonialsBody__right {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody .testimonialsBody__right p {
+  color: #fff;
+  text-align: center;
+  padding-top: 1em;
+  text-wrap: wrap;
+}
+section.testimonials .testimonialsFooter .testimonialsFooterElements img[alt=arrowLeft] {
+  margin-right: 3em;
+}
+section.testimonials .testimonialsFooter .testimonialsFooterElements img[alt=arrowRight] {
+  margin-left: 3em;
+}
+section.testimonials .testimonialsFooter .testimonialsFooterElements img[alt=arrowLeft],
+section.testimonials .testimonialsFooter .testimonialsFooterElements img[alt=arrowRight],
+section.testimonials .testimonialsFooter .testimonialsFooterElements img {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: 0.3s ease;
+}
+section.testimonials .testimonialsFooter .testimonialsFooterElements img[alt=arrowLeft]:hover,
+section.testimonials .testimonialsFooter .testimonialsFooterElements img[alt=arrowRight]:hover,
+section.testimonials .testimonialsFooter .testimonialsFooterElements img:hover {
+  opacity: 0.6;
+}
+section.testimonials .testimonialsFooter .testimonialsFooterElements .testimonialEllipseElements img {
+  padding: 0 0.2em;
+}
+
+section.article {
+  position: relative;
+}
+section.article .articleHeader {
+  flex-direction: column;
+}
+section.article img[alt=bubbleElement] {
+  position: absolute;
+  z-index: -1;
+  top: 5%;
+  left: 5%;
+}
+section.article .articleBody {
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+section.article .articleBody img[alt=bgElementReversed] {
+  width: 80%;
+  position: absolute;
+  z-index: -1;
+  top: 67%;
+  left: 20%;
+}
+section.article .articleBodyCard {
+  width: 80%;
+  margin: 2em 0;
+  border-radius: 1.5em;
+  background-color: #fff;
+  box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.4);
+}
+section.article .articleBodyCard__top img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 1.5em 1.5em 0 0;
+}
+section.article .articleBodyCard__bottom {
+  width: 90%;
+  padding: 1em 2em;
+}
+section.article .articleBodyCard__bottomNav {
+  transition: 0.3s ease-in;
+}
+section.article .articleBodyCard__bottomNav a {
+  color: #458ff6;
+}
+section.article .articleBodyCard__bottomNav img {
+  padding-left: 1em;
+  width: 2.3em;
+}
+section.article .articleBodyCard__bottomNav img:hover {
+  margin-left: 0.5em;
+}
+
+footer {
+  width: 100%;
+  position: relative;
+  margin-top: 8em;
+  padding: 3em;
+  background: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
+  color: #fff;
+}
+footer img[alt=bubbleElementUpper] {
+  position: absolute;
+  top: -5%;
+  left: 75%;
+  z-index: -1;
+}
+footer .footerLogoWrapper h2 {
+  padding: 1em;
+}
+footer .footerEllipse {
+  position: relative;
+}
+footer .footerEllipse img {
+  position: absolute;
+  top: 31%;
+  left: 33%;
+}
+footer .footerNav {
+  flex-direction: column-reverse;
+}
+footer .footerNav__left {
+  margin-top: 2em;
+}
+footer .footerCompany ul,
+footer .footerRegion ul,
+footer .footerHelp ul {
+  font-size: 1.4em;
+  padding: 0.3em 0;
+}
+footer .footerContacts {
+  margin-bottom: 4em;
+}
+footer .footerContacts p {
+  color: #fff;
+  font-size: 1.2em;
+  margin: 2em 0.5em;
+  text-align: center;
+}
+footer svg {
+  height: 3em;
+  width: 3em;
+}
+footer a {
+  color: #fff;
+  margin: 1em 0;
+}
+footer a:hover {
+  animation-duration: 2s;
+  animation-name: animateButton;
+}
+footer li:first-child > a {
+  font-weight: 700;
+}
+footer li {
+  margin: 1em;
+  text-align: center;
+}
+footer img[alt=bubbleElementDown] {
+  position: absolute;
+  top: 90%;
+  left: 0%;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  header .navBar {
+    position: static;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: none;
+  }
+  header .hamburgerMenuHidden {
+    display: block !important;
+  }
+  header .navBarLogo svg {
+    display: none;
+  }
+  header .navBar .navBarLogo {
+    box-shadow: none;
+  }
+  header .navBar .navBarItemsWrapper {
+    flex-direction: row;
+    gap: 1.5em;
+  }
+  header .navBar .navBarItemsWrapper__item a {
+    font-size: 110%;
+  }
+  .hero {
+    margin: 2em 0;
+  }
+  .hero .bubbleAccent {
+    display: block;
+  }
+  .hero .heroContainer {
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    margin: 2em 3em;
+  }
+  .hero .heroRight img {
+    width: 60vw;
+    padding-left: 2em;
+  }
+  section.services {
+    margin-top: 5em;
+  }
+  section.services .servicesHeader p {
+    width: 80%;
+  }
+  section.services .servicesBody img[alt=bubbleElement] {
+    top: 0%;
+    left: 89%;
+  }
+  section.services .servicesBodyCardWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5%;
+  }
+  section.services .servicesBodyCard {
+    width: 40%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1em 2em;
+    margin: 2em 1em;
+  }
+  section.services .servicesBodyCard p {
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+  section.services .servicesFooter {
+    margin: 4em 0;
+  }
+  section.healthcareProviders {
+    padding: 5em 0;
+    flex-direction: row;
+  }
+  section.healthcareProviders .healthcareProviders__left img {
+    width: 50vw;
+    padding-right: 2em;
+  }
+  section.healthcareProviders img[alt=bubbleElement] {
+    top: 100%;
+    left: 93%;
+  }
+  section.mobileApps {
+    padding-top: 3em;
+    flex-direction: row;
+  }
+  section.mobileApps img[alt=appsBanner] {
+    width: 50vw;
+  }
+  section.testimonials .testimonialsWrapper img[alt=bubbleElementUpper] {
+    top: 20%;
+    left: 92%;
+  }
+  section.testimonials .testimonialsWrapper img[alt=bubbleElementDown] {
+    top: 80%;
+    left: -8%;
+  }
+  section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody {
+    flex-direction: row;
+  }
+  section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody .testimonialsBody__right p {
+    text-align: left;
+    padding-top: 0;
+  }
+  section.testimonials .testimonialsFooter {
+    margin-bottom: 25%;
+  }
+  section.testimonials .testimonialsFooter .testimonialsFooterElements img[alt=arrowLeft] {
+    margin-right: 4em;
+  }
+  section.testimonials .testimonialsFooter .testimonialsFooterElements img[alt=arrowRight] {
+    margin-left: 4em;
+  }
+  section.article {
+    margin-top: -5em;
+  }
+  section.article img[alt=bubbleElement] {
+    top: 7%;
+    left: 5%;
+  }
+  section.article .articleBody {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2em;
+  }
+  section.article .articleBody img[alt=bgElementReversed] {
+    top: 50%;
+    left: 20%;
+  }
+  section.article .articleBodyCard {
+    width: 40%;
+  }
+  footer {
+    margin-top: 20%;
+  }
+  footer img[alt=bubbleElementUpper] {
+    top: -7%;
+    left: 80%;
+    transform: rotate(90deg);
+  }
+  footer .footerEllipse img {
+    top: 31%;
+    left: 33%;
+  }
+  footer .footerCompany ul,
+  footer .footerRegion ul,
+  footer .footerHelp ul {
+    font-size: 1.3em;
+    padding: 0.5em 0;
+  }
+  footer .footerContacts p {
+    width: 30em;
+    font-size: 1.2em;
+    text-align: center;
+  }
+  footer img[alt=bubbleElementDown] {
+    top: 90%;
+    left: 5%;
+    transform: rotate(90deg);
+  }
+}
+@media (min-width: 1024px) {
+  .navBar {
+    position: sticky;
+    top: 0;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    box-shadow: none;
+  }
+  .navBar .hamburgerMenuHidden {
+    display: block;
+  }
+  .navBar .navBarLogo svg {
+    display: none;
+  }
+  .navBar .navBarItemsWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 3vw;
+  }
+  .navBar .navBarLogo {
+    box-shadow: none;
+  }
+  .hero .bubbleAccent {
+    display: block;
+    position: absolute;
+    left: 0%;
+    top: 20%;
+  }
+  .hero .heroContainer {
+    flex-direction: row;
+    margin: 7em;
+  }
+  .hero .heroLeft div,
+  .hero .heroLeft p,
+  .hero .heroLeft h1 {
+    text-align: left;
+  }
+  .hero .heroLeft h1 {
+    font-size: 2.1em;
+    width: 80%;
+  }
+  .hero .heroLeft p {
+    font-size: 100%;
+  }
+  .hero .heroRight img {
+    width: 48vw;
+    padding-left: 4em;
+  }
+  section.services .servicesBody img[alt=bubbleElement] {
+    top: 37%;
+    left: 84%;
+  }
+  section.services .servicesHeader p {
+    width: 89%;
+    text-align: center;
+    font-size: 1em;
+  }
+  section.services .servicesBody img[alt=bgElement] {
+    top: -25%;
+    left: -10%;
+    width: 70%;
+  }
+  section.services .servicesBodyCardWrapper {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-top: 2em;
+  }
+  section.services .servicesBodyCard {
+    width: 29%;
+    padding: 1.5em;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 1em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  section.services .servicesBodyCard p {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+  section.services .servicesFooter {
+    margin: 4em 0;
+  }
+  section.healthcareProviders {
+    margin: 10em 6em;
+    flex-direction: row;
+  }
+  section.healthcareProviders .healthcareProviders__left img {
+    width: 50vw;
+    padding-right: 4em;
+  }
+  section.healthcareProviders .healthcareProviders__right h2 {
+    font-size: 2em;
+    width: 80%;
+  }
+  section.healthcareProviders img[alt=bubbleElement] {
+    top: 100%;
+    left: 100%;
+  }
+  section.mobileApps {
+    margin: 0 6em;
+    flex-direction: row;
+  }
+  section.mobileApps img[alt=appsBanner] {
+    width: 50vw;
+  }
+  section.mobileApps .mobileApps__left h2 {
+    font-size: 2em;
+    width: 70%;
+  }
+  section.testimonials .testimonialsWrapper img[alt=bubbleElementUpper] {
+    top: 40%;
+    left: 92%;
+  }
+  section.testimonials .testimonialsWrapper img[alt=bubbleElementDown] {
+    top: 75%;
+  }
+  section.testimonials .testimonialsWrapper .testimonialsContent {
+    padding: 4em;
+  }
+  section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody {
+    flex-direction: row;
+    gap: 5%;
+  }
+  section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody .testimonialsBody__left {
+    margin-left: 5%;
+  }
+  section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody .testimonialsBody__left .testimonialsProp {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody .testimonialsBody__left .testimonialsProp h2 {
+    font-size: 1.4em;
+    text-wrap: nowrap;
+  }
+  section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody .testimonialsBody__left .testimonialsProp p {
+    font-size: 1.1em;
+  }
+  section.testimonials .testimonialsWrapper .testimonialsContent .testimonialsBodyWrapper .testimonialsBody .testimonialsBody__right p {
+    font-size: 1.1em;
+    width: 100%;
+    text-align: left;
+  }
+  section.testimonials .testimonialsFooter {
+    margin-bottom: 25%;
+  }
+  section.testimonials .testimonialsFooter .testimonialsFooterElements img[alt=arrowLeft] {
+    margin-right: 4em;
+  }
+  section.testimonials .testimonialsFooter .testimonialsFooterElements img[alt=arrowRight] {
+    margin-left: 4em;
+  }
+  section.article img[alt=bubbleElement] {
+    top: 15%;
+    left: 10%;
+  }
+  section.article .articleBody {
+    flex-direction: row;
+    width: 80%;
+    gap: 2em;
+    margin: 0 auto;
+  }
+  section.article .articleBody img[alt=bgElementReversed] {
+    width: 40%;
+    top: -2%;
+    left: 72.5%;
+  }
+  section.article .articleBodyCard {
+    width: 28%;
+  }
+  section.article .articleBodyCard__bottom {
+    width: 100%;
+    padding: 1em 2em;
+  }
+  section.article .articleBodyCard__bottomNav a {
+    padding-right: 2em;
+    font-size: 1.1em;
+  }
+  section.article .articleBodyCard__bottomNav img {
+    width: 2em;
+  }
+  section.article .articleFooter {
+    margin-top: 2em;
+  }
+  footer {
+    padding: 0 4em;
+    margin-top: 20%;
+  }
+  footer .footerWrapper {
+    margin-top: 4em;
+  }
+  footer img[alt=bubbleElementUpper] {
+    top: -24%;
+    left: 85%;
+    transform: rotate(90deg);
+  }
+  footer .footerNav {
+    flex-direction: row;
+  }
+  footer .footerNav__right {
+    display: flex;
+    margin-top: -2em;
+    margin-left: 5em;
+  }
+  footer .footerCompany ul,
+  footer .footerRegion ul,
+  footer .footerHelp ul {
+    width: 100%;
+    font-size: 1em;
+    margin-left: 3em;
+    display: flex;
+    flex-direction: column;
+  }
+  footer .footerContacts {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-left: 10%;
+  }
+  footer .footerContacts p {
+    width: 23em;
+    font-size: 1em;
+    margin: 1em 0;
+    text-align: left;
+  }
+  footer a:hover {
+    animation-duration: 2s;
+    animation-name: animateButton;
+  }
+  footer li:first-child > a {
+    font-weight: 700;
+    font-size: 1.1em;
+  }
+  footer li {
+    text-align: left;
+  }
+  footer img[alt=bubbleElementDown] {
+    top: 73%;
+    left: 0%;
+    transform: rotate(90deg);
+  }
+}/*# sourceMappingURL=main.css.map */
